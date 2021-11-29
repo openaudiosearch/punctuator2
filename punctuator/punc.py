@@ -13,7 +13,7 @@ import theano
 import theano.tensor as T
 import numpy as np
 
-import gdown
+# import gdown
 
 from . import models
 from . import data
@@ -28,16 +28,16 @@ MAX_SUBSEQUENCE_LEN = 200
 DEMO_DATA_GID = '0B7BsN5f2F1fZd1Q0aXlrUDhDbnM' # Demo-Europarl-EN.pcl
 
 
-def download_model(gid=DEMO_DATA_GID):
-    _cwd = os.getcwd()
-    try:
-        os.makedirs(PUNCTUATOR_DATA_DIR, exist_ok=True)
-        os.chdir(PUNCTUATOR_DATA_DIR)
-        logging.info('Downloading %s...', gid)
-        fn = gdown.download(url=f'https://drive.google.com/uc?id={gid}', output=None, quiet=False)
-        return os.path.join(PUNCTUATOR_DATA_DIR, fn)
-    finally:
-        os.chdir(_cwd)
+#  def download_model(gid=DEMO_DATA_GID):
+#      _cwd = os.getcwd()
+#      try:
+#          os.makedirs(PUNCTUATOR_DATA_DIR, exist_ok=True)
+#          os.chdir(PUNCTUATOR_DATA_DIR)
+#          logging.info('Downloading %s...', gid)
+#          fn = gdown.download(url=f'https://drive.google.com/uc?id={gid}', output=None, quiet=False)
+#          return os.path.join(PUNCTUATOR_DATA_DIR, fn)
+#      finally:
+#          os.chdir(_cwd)
 
 
 def to_array(arr, dtype=np.int32):
